@@ -1,0 +1,26 @@
+{
+  "name": "v1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "blockstore-core": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "fs-extra": "^11.2.0",
+    "helia": "^4.2.5",
+    "ipfs-http-client": "^60.0.1",
+    "ipfs-unixfs": "^11.1.4",
+    "multer": "^1.4.5-lts.1",
+    "pdf-lib": "^1.17.1",
+    "web3": "^4.11.1"
+  },
+  "description": "",
+  "type": "module"
+}
