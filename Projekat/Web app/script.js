@@ -242,10 +242,17 @@ document.getElementById('searchBtn').addEventListener('click', ()=>{
             }
         ];
     
-        document.getElementById('donation-form').addEventListener('submit', async (event) => {
+        document.getElementById('donation-form-3').addEventListener('submit', async (event) => {
             event.preventDefault();
     
-            const donationAmount = document.getElementById('donation-amount').value;
+            var donationAmount = document.getElementById('donation-amount-3').value;
+            console.log(donationAmount);
+
+            if (!donationAmount || isNaN(donationAmount) || parseFloat(donationAmount) <= 0) {
+                    alert('Please enter a valid donation amount.');
+                    return;
+                }       
+
             if (typeof window.ethereum !== 'undefined') {
                 const web3 = new Web3(window.ethereum);
                 try {
@@ -275,6 +282,121 @@ document.getElementById('searchBtn').addEventListener('click', ()=>{
     
                     alert('Donation successful!');
                     document.getElementById('donate-modal-popup').style.display = 'none';
+                } catch (error) {
+                    console.error(error);
+                    alert('An error occurred while processing the donation.');
+                }
+            } else {
+                alert('MetaMask is not installed. Please install MetaMask to proceed.');
+            }
+        });
+    });
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const contractAddress2 = '0x358AA13c52544ECCEF6B0ADD0f801012ADAD5eE3';
+        const contractABI2 = [
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "numberOfPages",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "payForPages",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "withdraw",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "stateMutability": "payable",
+                "type": "receive"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "numberOfPages",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "calculatePayment",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "pricePerPage",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ];
+    
+        document.getElementById('cite-form-3').addEventListener('submit', async (event) => {
+            event.preventDefault();
+    
+            var citationAmount = document.getElementById('cite-amount-3').value;
+            console.log(citationAmount);
+
+            if (!citationAmount || isNaN(citationAmount) || parseFloat(citationAmount) <= 0) {
+                    alert('Please enter a valid donation amount.');
+                    return;
+                }       
+
+            if (typeof window.ethereum !== 'undefined') {
+                const web3 = new Web3(window.ethereum);
+                try {
+                    // Request account access if needed
+                    await ethereum.request({ method: 'eth_requestAccounts' });
+    
+                    // Get the user's accounts
+                    const accounts = await web3.eth.getAccounts();
+                    const userAccount = accounts[0];
+    
+                    // Instantiate the contract
+                    const citationContract = new web3.eth.Contract(contractABI2, contractAddress2);
+    
+                    // Check if the user has enough balance
+                    const balance = await web3.eth.getBalance(userAccount);
+                    const balanceInEth = web3.utils.fromWei(balance, 'ether');
+                    if (parseFloat(balanceInEth) < parseFloat(citationAmount) * 0.0001) {
+                        alert('Insufficient funds.');
+                        console.log(balanceInEth);
+                        console.log(citationAmount);
+                        return;
+                    }
+    
+                    // Send the donation
+                    await citationContract.methods.payForPages(citationAmount).send({
+                        from: userAccount,
+                        value: web3.utils.toWei(citationAmount, 'ether')
+                    });
+    
+                    alert('Citation successful!');
+                    document.getElementById('cite-modal-popup-3').style.display = 'none';
                 } catch (error) {
                     console.error(error);
                     alert('An error occurred while processing the donation.');

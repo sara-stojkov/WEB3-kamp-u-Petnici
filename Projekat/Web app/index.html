@@ -178,7 +178,7 @@
                   <div class="modal-body">
                     <form id="donation-form-3">
                       <label for="donation">Donation amount (ETH):</label>
-                      <input type="number" id="donation-amount" name="donation" min="0.00000001" max="1000" step="0.00000001" required>
+                      <input type="text" id="donation-amount-3" name="donation" min="0.00000001" step="0.00000001" required>
                       <button type="submit" class="btn btn-primary">Donate</button>
                     </form>
                     <button type="button" class="btn btn-secondary" onclick="document.getElementById('donate-modal-popup-3').style.display='none'">Close</button>
@@ -186,6 +186,27 @@
                 </div>
               </div>
             </div>
+
+            <div id="cite-modal-popup-3" class="modal">
+                <span onclick="document.getElementById('cite-modal-popup-3').style.display='none'"
+                class="close" title="Close Modal">&times;</span>
+                
+                <div class="modal-content animate" id="citeForm">
+                  <div class="modal-header">
+                    <h2>Cite this paper</h2>
+                  </div>
+                  <div class="modal-body">
+                    <form id="cite-form-3">
+                      <label for="donation">Number of cited pages:</label>
+                      <input type="text" id="cite-amount-3" name="donation" min="1" step="1" required>
+                      <button type="submit" class="btn btn-primary">Confirm</button>
+                    </form>
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('cite-modal-popup-3').style.display='none'">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
 
             <div class="row">
