@@ -35,7 +35,6 @@
             </div>        
         </div>
 
-        <!-- Modal for file upload -->
         <div id="upload-modal-popup" class="modal">
             <span onclick="document.getElementById('upload-modal-popup').style.display='none'"
             class="close" title="Close Modal">&times;</span>
@@ -53,14 +52,224 @@
         </div>
 
         <div class="col-md-6">
-            <input type="text" placeholder="Search..." id="input-text">
-            <button type="button" id="search-btn">
+            <input type="text" placeholder="Search..." id="searchbar">
+            <button type="button" id="searchBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
                     <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018"/>
                     <path d="M13 6.5a6.47 6.47 0 0 1-1.258 3.844q.06.044.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11"/>
                 </svg>
             </button>  
         </div>
+    </div>
+
+    <div id="cardcontainer" class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="paper-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Microbial Allelochemicals and Pathogens as Bioherbicidal Agents</h5>
+                        <p class="card-text">Author(s): Hoagland R. E.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('view-modal-popup-1').style.display='block'">View</button>
+                        <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('donate-modal-popup-1').style.display='block'">Donate</button>
+                        <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('cite-modal-popup-1').style.display='block'">Cite</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="view-modal-popup-1" class="modal">
+                <span onclick="document.getElementById('view-modal-popup-3').style.display='none'"
+                class="close" title="Close Modal">&times;</span>
+              
+                <div class="modal-content animate" id="viewForm">
+                    <div class="modal-header">
+                        <h2>Paper preview</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Author(s): Sizar O, Leslie SW, Unakal CG</p>
+                        <p>Abstract: Health professionals need to understand the important difference between gram-positive and gram-negative bacteria. Gram-positive bacteria are bacteria classified by the color they turn in the staining method. Hans Christian Gram developed the staining method in 1884. The staining method uses crystal violet dye, which is retained by the thick peptidoglycan cell wall found in gram-positive organisms. This reaction gives gram-positive organisms a blue color when viewed under a microscope. Although gram-negative organisms classically have an outer membrane, they have a thinner peptidoglycan layer, which does not hold the blue dye used in the initial dying process. Other information used to differentiate bacteria is the shape. Gram-positive bacteria comprise cocci, bacilli, or branching filaments.</p>
+                        <p>Keywords: Bacteria, gram positive, staining, cell wall</p>
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" onclick="document.getElementById('view-modal-popup-3').style.display='none'">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="donate-modal-popup-1" class="modal">
+                <span onclick="document.getElementById('donate-modal-popup-1').style.display='none'"
+                class="close" title="Close Modal">&times;</span>
+                
+                <div class="modal-content animate" id="donateForm">
+                  <div class="modal-header">
+                    <h2>Donate</h2>
+                  </div>
+                  <div class="modal-body">
+                    <form id="donation-form-1">
+                      <label for="donation">Donation amount (ETH):</label>
+                      <input type="number" id="donation-amount" name="donation" min="0.00000001" max="1000" step="0.00000001" required>
+                      <button type="submit" class="btn btn-primary">Donate</button>
+                    </form>
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('donate-modal-popup-1').style.display='none'">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card" id="paper-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Genetički diverzitet i struktura populacija beskrilnih muva familije Nycteribiidae i grinja familije Spinturnicidae, ektoparazita dve litofilne vrste slepih miševa u Srbiji</h5>
+                        <p class="card-text">Author(s): Bajić B.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('view-modal-popup-2').style.display='block'">View</button>
+                        <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('donate-modal-popup-2').style.display='block'">Donate</button>
+                        <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('cite-modal-popup-2').style.display='block'">Cite</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" id="paper-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Gram-Positive Bacteria</h5>
+                        <p class="card-text">Author: Sizar O, Leslie SW, Unakal CG</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('view-modal-popup-3').style.display='block'">View</button>
+                        <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('donate-modal-popup-3').style.display='block'">Donate</button>
+                        <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('cite-modal-popup-3').style.display='block'">Cite</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="view-modal-popup-3" class="modal">
+                <span onclick="document.getElementById('view-modal-popup-3').style.display='none'"
+                class="close" title="Close Modal">&times;</span>
+              
+                <div class="modal-content animate" id="viewForm">
+                    <div class="modal-header">
+                        <h2>Paper preview</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Author(s): Sizar O, Leslie SW, Unakal CG</p>
+                        <p>Abstract: Health professionals need to understand the important difference between gram-positive and gram-negative bacteria. Gram-positive bacteria are bacteria classified by the color they turn in the staining method. Hans Christian Gram developed the staining method in 1884. The staining method uses crystal violet dye, which is retained by the thick peptidoglycan cell wall found in gram-positive organisms. This reaction gives gram-positive organisms a blue color when viewed under a microscope. Although gram-negative organisms classically have an outer membrane, they have a thinner peptidoglycan layer, which does not hold the blue dye used in the initial dying process. Other information used to differentiate bacteria is the shape. Gram-positive bacteria comprise cocci, bacilli, or branching filaments.</p>
+                        <p>Keywords: Bacteria, gram positive, staining, cell wall</p>
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" onclick="document.getElementById('view-modal-popup-3').style.display='none'">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="donate-modal-popup-3" class="modal">
+                <span onclick="document.getElementById('donate-modal-popup-3').style.display='none'"
+                class="close" title="Close Modal">&times;</span>
+                
+                <div class="modal-content animate" id="donateForm">
+                  <div class="modal-header">
+                    <h2>Donate</h2>
+                  </div>
+                  <div class="modal-body">
+                    <form id="donation-form-3">
+                      <label for="donation">Donation amount (ETH):</label>
+                      <input type="number" id="donation-amount" name="donation" min="0.00000001" max="1000" step="0.00000001" required>
+                      <button type="submit" class="btn btn-primary">Donate</button>
+                    </form>
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('donate-modal-popup-3').style.display='none'">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" id="paper-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Paper Titleeee</h5>
+                            <p class="card-text">Author: Author Name</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('view-modal-popup-1').style.display='block'">View</button>
+                            <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('donate-modal-popup-1').style.display='block'">Donate</button>
+                            <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('cite-modal-popup-1').style.display='block'">Cite</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-4">
+                    <div class="card" id="paper-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Paper Title</h5>
+                            <p class="card-text">Author: Author Name</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('view-modal-popup-2').style.display='block'">View</button>
+                            <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('donate-modal-popup-2').style.display='block'">Donate</button>
+                            <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('cite-modal-popup-2').style.display='block'">Cite</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-4">
+                    <div class="card" id="paper-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Gram-Positive Bacteria</h5>
+                            <p class="card-text">Author: Sizar O, Leslie SW, Unakal CG</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('view-modal-popup-3').style.display='block'">View</button>
+                            <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('donate-modal-popup-3').style.display='block'">Donate</button>
+                            <button class="btn btn-primary" id="view-btn" type="button" role="button" onclick="document.getElementById('cite-modal-popup-3').style.display='block'">Cite</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="view-modal-popup-3" class="modal">
+                    <span onclick="document.getElementById('view-modal-popup-3').style.display='none'"
+                    class="close" title="Close Modal">&times;</span>
+                  
+                    <div class="modal-content animate" id="viewForm">
+                        <div class="modal-header">
+                            <h2>Paper preview</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Author(s): Sizar O, Leslie SW, Unakal CG</p>
+                            <p>Abstract: Health professionals need to understand the important difference between gram-positive and gram-negative bacteria. Gram-positive bacteria are bacteria classified by the color they turn in the staining method. Hans Christian Gram developed the staining method in 1884. The staining method uses crystal violet dye, which is retained by the thick peptidoglycan cell wall found in gram-positive organisms. This reaction gives gram-positive organisms a blue color when viewed under a microscope. Although gram-negative organisms classically have an outer membrane, they have a thinner peptidoglycan layer, which does not hold the blue dye used in the initial dying process. Other information used to differentiate bacteria is the shape. Gram-positive bacteria comprise cocci, bacilli, or branching filaments.</p>
+                            <p>Keywords: Bacteria, gram positive, staining, cell wall</p>
+                        </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" onclick="document.getElementById('view-modal-popup-3').style.display='none'">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="donate-modal-popup-3" class="modal">
+                    <span onclick="document.getElementById('donate-modal-popup-3').style.display='none'"
+                    class="close" title="Close Modal">&times;</span>
+                    
+                    <div class="modal-content animate" id="donateForm">
+                      <div class="modal-header">
+                        <h2>Donate</h2>
+                      </div>
+                      <div class="modal-body">
+                        <form id="donation-form-3">
+                          <label for="donation">Donation amount (ETH):</label>
+                          <input type="number" id="donation-amount" name="donation" min="0.00000001" max="1000" step="0.00000001" required>
+                          <button type="submit" class="btn btn-primary">Donate</button>
+                        </form>
+                        <button type="button" class="btn btn-secondary" onclick="document.getElementById('donate-modal-popup-3').style.display='none'">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

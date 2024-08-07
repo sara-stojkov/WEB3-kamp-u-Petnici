@@ -166,7 +166,7 @@ nav {
 label {
   display: block;
   position: relative;
-  margin-left: 30px;
+  margin-left: 2vh;
 }
 
 label::before {
@@ -185,8 +185,8 @@ label::before {
   font-size: 2vw;
 }
 
-.card-body{
-  padding-bottom: 0;
+.card{
+  height: 30vh;
 }
 
 #upload-btn{
@@ -213,7 +213,7 @@ label::before {
   margin-bottom: 1vh;
 }
 
-#input-text {
+#searchbar {
   font-size: 1.7vw;
   padding: 1vh;
   width: 50%;
