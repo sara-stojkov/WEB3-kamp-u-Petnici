@@ -1,0 +1,58 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity 0.8.26;
+// verzija 1
+
+contract FixedPriceCite {
+
+    struct Paper {
+        string name;
+        uint256 price;
+        uint256 amountReceived;
+        address payable authorAddress;
+    }
+
+    struct Citation {
+        address owner;
+        address sender;
+    }
+
+    uint256 constant citationPrice = 0.001 ether;  
+    uint64 public index; // last slot where item was added
+
+    mapping(uint256 => Paper) public papers;
+    mapping(address => uint256) public earnings;
+
+    event PaperUploaded(string name, uint256 price, address authorAddress);
+    event CitationSuccess(address owner, address sender);
+
+    error FixedPriceCitations_NotEnoughMoney();
+    error FixedPriceCitations_EmptyPaperName();
+    error FixedPriceCitations_InvalidID();
+
+    // constructor() {
+        
+    // }
+
+    function addPaper(string calldata name, uint256 price, address payable authorAddress) public {
+        if (bytes(name).length == 0) {
+            revert FixedPriceCitations_EmptyPaperName();
+        }
+        papers[index] = Paper(name, price, 0, authorAddress);
+        index++;
+        emit PaperUploaded(name, price, authorAddress);
+    }
+
+    function buyCitation(uint256 paperIndex) public payable {
+        Paper storage paper = papers[paperIndex];
+        if (paper.price == 0) {
+            revert FixedPriceCitations_InvalidID();
+        }
+        if (msg.value != citationPrice) {
+            revert FixedPriceCitations_NotEnoughMoney();
+        }
+        paper.amountReceived += msg.value;
+
+    }
+
+}       
