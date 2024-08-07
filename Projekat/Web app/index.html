@@ -32,10 +32,10 @@
         <div class="col-md-6">
             <div class="row justify-content-center align-items-center full-height">
                 <button class="btn btn-outline-success" id="upload-btn" type="button" role="button" onclick="document.getElementById('upload-modal-popup').style.display='block'">Upload file</button>
-
             </div>        
         </div>
 
+        <!-- Modal for file upload -->
         <div id="upload-modal-popup" class="modal">
             <span onclick="document.getElementById('upload-modal-popup').style.display='none'"
             class="close" title="Close Modal">&times;</span>
@@ -46,68 +46,28 @@
                     <input type="file" class="form-control-file" id="pdfInput" accept="application/pdf">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('upload-modal-popup').style.display='none'">Close</button>
+                    <button type="button" id="submitBtn" class="btn btn-primary">Submit</button>
                 </div>
             </form>
-          </div>
-
+        </div>
 
         <div class="col-md-6">
-            <input type="text" placeholder="Search..." id="input-text"></input>
-            <button type="button" id="search-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
-                <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018"/>
-                <path d="M13 6.5a6.47 6.47 0 0 1-1.258 3.844q.06.044.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11"/>
-              </svg></button>  
-
+            <input type="text" placeholder="Search..." id="input-text">
+            <button type="button" id="search-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018"/>
+                    <path d="M13 6.5a6.47 6.47 0 0 1-1.258 3.844q.06.044.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11"/>
+                </svg>
+            </button>  
         </div>
     </div>
 
-        <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="pdfModalLabel">Select PDF File</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form id="uploadform">
-                    <div class="container" id="logininfo">
-                    <div class="form-group">
-                      <label for="pdfInput">Choose PDF</label>
-                      <input type="file" class="form-control-file" id="pdfInput" accept="application/pdf">
-                    </div>
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" class="close">Cancel</button>
-                    <button type="button" class="btn btn-primary">Upload</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        
-
-    <!-- <div id="pdf-containter" class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card" id="pdf-card">
-                    <div class="card-body">
-                        <h2 class="card-title" id="pdf-title">Title</h2>
-                        <p class="card-text" id="pdf-author">Author</p>
-                        <p class="card-text" id="pdf-date">Date</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+    <script src="https://unpkg.com/ipfs-http-client/dist/index.min.js"></script>
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="script.js"></script>   
 </body>
 </html>
