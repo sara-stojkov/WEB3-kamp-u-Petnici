@@ -358,10 +358,11 @@ document.getElementById('searchBtn').addEventListener('click', ()=>{
         document.getElementById('cite-form-3').addEventListener('submit', async (event) => {
             event.preventDefault();
     
-            var citationAmount = document.getElementById('cite-amount-3').value;
-            console.log(citationAmount);
+            var citedPages = document.getElementById('cite-amount-3').value;
+            console.log(citedPages); //ok
 
-            if (!citationAmount || isNaN(citationAmount) || parseFloat(citationAmount) <= 0) {
+
+            if (!citedPages || isNaN(citedPages) || parseFloat(citedPages) <= 0) {
                     alert('Please enter a valid donation amount.');
                     return;
                 }       
@@ -382,17 +383,17 @@ document.getElementById('searchBtn').addEventListener('click', ()=>{
                     // Check if the user has enough balance
                     const balance = await web3.eth.getBalance(userAccount);
                     const balanceInEth = web3.utils.fromWei(balance, 'ether');
-                    if (parseFloat(balanceInEth) < parseFloat(citationAmount) * 0.0001) {
+                    citationAmount = citedPages * 0.0005;
+                    console.log(citationAmount);
+                    if (parseFloat(balanceInEth) < parseFloat(citationAmount)) {
                         alert('Insufficient funds.');
                         console.log(balanceInEth);
                         console.log(citationAmount);
-                        return;
                     }
-    
-                    // Send the donation
-                    await citationContract.methods.payForPages(citationAmount).send({
+                    
+                    await citationContract.methods.payForPages(citedPages).send({
                         from: userAccount,
-                        value: web3.utils.toWei(citationAmount, 'ether')
+                        value: web3.utils.toWei(citedPages, 'ether') * 0.0005 // otpr 1 e po strani
                     });
     
                     alert('Citation successful!');
