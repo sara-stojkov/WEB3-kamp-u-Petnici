@@ -13,5 +13,6 @@ Glavni materijal bili su sami Whitepaper radovi i bilo koji drugi naučni radovi
 Kao polaznici, imali smo priliku da odaberemo temu koja nam je zanimljiva, a vezana za WEB3 tehnologije, primarno Blockchain i DeFi. Tema koju sam ja odabrala je Polkadot.
 Polkadot je svakako OpenSource, tako da je bilo značajno što je bilo lako pogledati sve njihove resurse.
 
-## Finalni projekat
+## Projekat - OpenCite
+
 
