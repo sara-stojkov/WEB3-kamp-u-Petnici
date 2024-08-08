@@ -14,5 +14,6 @@ Kao polaznici, imali smo priliku da odaberemo temu koja nam je zanimljiva, a vez
 Polkadot je svakako OpenSource, tako da je bilo značajno što je bilo lako pogledati sve njihove resurse.
 
 ## Projekat - OpenCite
+https://docs.google.com/document/d/1TJkYYLC3obot_C9U7yL17MTE4P0jhcxHwUYlMuEVdR4/edit?usp=sharing
 
 
