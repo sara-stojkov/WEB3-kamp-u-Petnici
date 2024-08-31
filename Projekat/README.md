@@ -1,6 +1,9 @@
 # OpenCite
 Web aplikacija koja omogućava da autori naučnih radova objave svoj rad na našu platformu i "naplate" ostalim autorima citiranje svojih radova korišćenjem WEB3 tehnologija i kriptovaluta za plaćanje.
 
+![image](https://github.com/user-attachments/assets/0c9bddde-b1e3-4974-adb2-ac50370165d4)
+
+
 ## Motivacija
 Naučnici trenutno u slučaju da neko citira njihovo delo ne dobijaju ništa sem veće posećenosti originalnog rada i povećanja h-indexa. Pomoću ovakvog rešenja,
 korišćenjem Web3 tehnologija i Blockchain-a, istorija citiranja je transparentna i zauvek dostupna. 
