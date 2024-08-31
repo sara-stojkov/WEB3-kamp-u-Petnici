@@ -13,7 +13,7 @@ Omogućava naučnicima da svoje radove objave bez posrednika (npr. naučnog čas
 ## Korišćene tehnologije
 
 - Frontend: klasični HTML i CSS, uz minimalno Bootstrap-a, kao i JavaScript za interaktivnost.
-- 
+  
 - Backend: pametni ugovori u Solidity-u, IPFS za skladištenje podataka.
 
 
